@@ -3,10 +3,18 @@
 
 <look-and-feel>
 	<compatibility>
-		<version>7.1.0+</version>
+		<version>7.2.0+</version>
 	</compatibility>
 	<theme id="idc" name="IDC">
 		<template-extension>ftl</template-extension>
+		<settings>
+			<setting configurable="true" key="show-footer" type="checkbox" value="true" />
+			<setting configurable="true" key="show-header" type="checkbox" value="true" />
+			<setting configurable="true" key="show-header-search" type="checkbox" value="true" />
+			<setting configurable="false" key="show-site-name-default" value="true" />
+			<setting configurable="false" key="show-site-name-supported" value="true" />
+			<setting configurable="true" key="wrap-content" type="checkbox" value="true" />
+		</settings>
 		<portlet-decorator id="barebone" name="Barebone">
 			<portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
 		</portlet-decorator>
