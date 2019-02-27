@@ -1,0 +1,26 @@
+.navbar-classic {
+    ul.navbar-nav {
+        justify-content: flex-end;
+
+        @include media-breakpoint-up(sm) {
+            justify-content: center;
+        }
+
+        li {
+            & > a {
+                color: $theme-light;
+                font-size: 15px;
+
+                @extend .font-rubik;
+
+                &:hover, &:active, &:focus {
+                    color: $theme-dark;
+                }
+            }
+
+            &.active > a {
+                color: $theme-dark;
+            }
+        }
+    }
+}

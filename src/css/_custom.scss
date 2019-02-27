@@ -4,3 +4,57 @@
 /* endinject */
 
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+@import "components/navbar";
+
+#wrapper {
+    @import "content/headers";
+    @import "content/fonts";
+}
+
+#banner {
+    .navbar-top {
+        min-height: $header-height;
+    }
+
+    .portlet {
+        margin-bottom: 0;
+
+        &:hover .portlet-topper {
+            z-index: 990;
+        }
+    }
+
+    border-bottom: 1px solid $theme-lighter;
+
+    .user-full-name {
+        display: none;
+    }
+
+    .logo h1 {
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .user-personal-bar {
+        @include media-breakpoint-down(xs) {
+            width: 100%;
+        }
+    }
+}
+
+
+.blue-float-border {
+    &::after {
+        @include media-breakpoint-up(sm) {
+            background-color: $theme-primary;
+            content: '';
+            height: 3px;
+            left: 0;
+            position: absolute;
+            top: -$header-height / 2.44;
+            width: 100%;
+        }
+    }
+}

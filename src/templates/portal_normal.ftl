@@ -10,6 +10,9 @@
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
 	<@liferay_util["include"] page=top_head_include />
+
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 </head>
 
 <body class="${css_class}">
@@ -23,45 +26,41 @@
 <div class="pt-0" id="wrapper">
 	<#if show_header>
 		<header id="banner">
-			<div class="navbar navbar-classic navbar-top py-3">
-				<div class="container user-personal-bar">
-					<div class="align-items-center autofit-row">
-						<a class="${logo_css_class} align-items-center d-md-inline-flex d-sm-none d-none logo-md" href="${site_default_url}" title="<@liferay.language_format arguments="" key="go-to-x" />">
+			<div class="navbar navbar-top">
+				<div class="container-fluid container-fluid-max-xl">
+					<div class="align-items-center autofit-row flex-wrap">
+						<a class="${logo_css_class} autofit-col align-items-center" href="${site_default_url}" title="<@liferay.language_format arguments="" key="go-to-x" />">
 							<img alt="${logo_description}" class="mr-2" height="56" src="${site_logo}" />
 
 							<#if show_site_name>
-								<h1 class="font-weight-bold h2 mb-0 text-dark">${site_name}</h1>
+								<h1 class="d-sm-inline font-weight-bold h2 mb-0 text-dark">${site_name}</h1>
 							</#if>
 						</a>
 
-						<#assign preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search"}) />
+						<#assign preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone"}) />
 
-						<div class="autofit-col autofit-col-expand">
-							<#if show_header_search>
-								<div class="justify-content-md-end mr-4 navbar-form" role="search">
-									<@liferay.search_bar default_preferences="${preferences}" />
-								</div>
-							</#if>
+						<div class="autofit-col autofit-col-expand navbar-classic">
+							<#include "${full_templates_path}/navigation.ftl" />
 						</div>
 
-						<div class="autofit-col">
-							<@liferay.user_personal_bar />
+						<div class="autofit-col user-personal-bar">
+							<div class="autofit-row align-items-center justify-content-end">
+								<div class="autofit-col blue-float-border text-letter-spacing-1 font-rubik px-2 px-md-3">
+									CONTACT
+								</div>
+
+								<div class="autofit-col autofit-col p-2 mr-3 ml-2">
+									<svg class="lexicon-icon">
+										<use xlink:href="${images_folder}/lexicon/icons.svg#search" />
+									</svg>
+								</div>
+
+								<div class="autofit-col">
+									<@liferay.user_personal_bar />
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="mb-4 navbar navbar-classic navbar-expand-md navbar-light pb-3">
-				<div class="container">
-					<a class="${logo_css_class} align-items-center d-inline-flex d-md-none logo-xs" href="${site_default_url}" rel="nofollow">
-						<img alt="${logo_description}" class="mr-2" height="56" src="${site_logo}" />
-
-						<#if show_site_name>
-							<h1 class="font-weight-bold h2 mb-0 text-dark">${site_name}</h1>
-						</#if>
-					</a>
-
-					<#include "${full_templates_path}/navigation.ftl" />
 				</div>
 			</div>
 		</header>
