@@ -8,8 +8,8 @@
 @import "components/navbar";
 
 #wrapper {
-    @import "content/headers";
     @import "content/fonts";
+    @import "content/headers";
 }
 
 #banner {
@@ -57,4 +57,21 @@
             width: 100%;
         }
     }
+}
+
+lfr-editable[type=rich-text] {
+    display: block !important;
+}
+
+.w-auto {
+    width: auto !important;
+}
+
+.h-auto {
+    height: auto !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
 }
