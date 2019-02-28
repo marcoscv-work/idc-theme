@@ -13,6 +13,8 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 
 <body class="${css_class}">
@@ -100,6 +102,49 @@
 <@liferay_util["include"] page=body_bottom_include />
 
 <@liferay_util["include"] page=bottom_include />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+<script>
+	<#if display_1_scroll_effect != "none">
+		var display1 = $('.portlet-layout .display-1');
+		if (display1) {
+			display1.addClass("wow ${display_1_scroll_effect}");
+		}
+	</#if>
+	<#if display_2_scroll_effect != "none">
+		var display2 = $('.portlet-layout .display-2');
+		if (display2) {
+			display2.addClass("wow ${display_2_scroll_effect}");
+		}
+	</#if>
+	<#if display_3_scroll_effect != "none">
+		var display3 = $('.portlet-layout .display-3');
+		if (display3) {
+			display3.addClass("wow ${display_3_scroll_effect}");
+		}
+	</#if>
+	<#if image_scroll_effect != "none">
+		var imageScrollEffect = $('.portlet-layout img');
+		if (imageScrollEffect) {
+			display3.addClass("wow ${image_scroll_effect}");
+		}
+	</#if>
+	<#if card_scroll_effect != "none">
+		var cardScrollEffect = $('.portlet-layout card');
+		if (cardScrollEffect) {
+			display3.addClass("wow ${card_scroll_effect}");
+		}
+	</#if>
+	<#if button_scroll_effect != "none">
+		var button = $('.portlet-layout .btn');
+		if (button) {
+			button.addClass("wow ${button_scroll_effect}");
+		}
+	</#if>
+
+	new WOW().init();
+</script>
 
 </body>
 
